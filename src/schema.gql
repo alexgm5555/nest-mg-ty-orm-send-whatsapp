@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Records {
+  id: String!
+  id_company: String!
+  name: String!
+  phone: String!
+  id_role: String!
+  request_date: String!
+  id_company_root: String!
+}
+
+type Query {
+  findAll: Records!
+}
+
+type Mutation {
+  create(createRecordInput: CreateRecordInput!): Records!
+}
+
+input CreateRecordInput {
+  id: String! = ""
+  id_company: String! = ""
+  name: String! = ""
+  phone: String!
+  id_role: String! = "0001"
+  id_company_root: String! = ""
+}
