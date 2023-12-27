@@ -22,6 +22,8 @@ async function bootstrap() {
   const origin = process.env.FRONTEND_ORIGINS
                     ? process.env.FRONTEND_ORIGINS.split(',')
                     : [`http://localhost:${process.env.PORT}`]
+  console.log(origin);
+  
   app.enableCors({
     origin,
     methods: 'GET, HEAD, PUT, PATCH, POST, DELETE',
