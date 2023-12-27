@@ -19,9 +19,14 @@ async function bootstrap() {
     }),
   );
   // app.setGlobalPrefix('api');
-  // app.enableCors();
-  console.log(process.env.PORT);
-  console.log('-----------------------------------');
+  const origin = process.env.FRONTEND_ORIGINS
+                    ? process.env.FRONTEND_ORIGINS.split(',')
+                    : [`http://localhost:${process.env.PORT}`]
+  app.enableCors({
+    origin,
+    methods: 'GET, HEAD, PUT, PATCH, POST, DELETE',
+    credentials: true
+  });
   
   await app.listen(process.env.PORT);
   
